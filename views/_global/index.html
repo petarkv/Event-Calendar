@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Peca Events - {% block title %}Home{% endblock %}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/EventCalendar/assets/css/main.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/font-awesome/css/font-awesome.min.css">
+         
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <div class="row">
+                <div class="col col-sm banner">
+                    <a href="/EventCalendar/home">
+                    <img src="/EventCalendar/assets/img/banner-1.jpg" alt="Banner 1">
+                    </a>
+                </div>
+    
+                <div class="col col-sm">
+                    <div class="social-icons text-right">                
+                        <a href="#"><img src="/EventCalendar/assets/img/social/facebook.png" alt="FB"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/instagram.png" alt="Gp"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/twitter.png" alt="Tw"></a>                
+                        <a href="#"><img src="/EventCalendar/assets/img/social/linkedin.png" alt="LI"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/youtube.png" alt="YT"></a>
+                    </div>
+
+                    <div class="search-box">
+                        <form method="POST" action="/EventCalendar/search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" 
+                                     placeholder="Search" required pattern="[^\s]{2,}">
+                                    <button type="submit" class="btn btn-primary input-group-append">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/EventCalendar/home">Peca Events</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="/EventCalendar/home"><i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/EventCalendar/calendar"><i class="fa fa-calendar"></i> Calendar</a>
+                    <a class="nav-item nav-link" href="/EventCalendar/user/categories"><i class="fa fa-list"></i> Categories</a>
+                    <a class="nav-item nav-link" href="/EventCalendar/profile"><i class="fa fa-user"></i> Profile</a>
+                    <a class="nav-item nav-link" href="/EventCalendar/user/contact"><i class="fa fa-phone"></i> Contact</a>
+                    <a class="nav-item nav-link" href="/EventCalendar/find"><i class="fa fa-search"></i> Find Event</a>
+                    <a class="nav-item nav-link" href="/EventCalendar/user/logout"><i class="fa fa-sign-out"></i> Logout</a>
+
+                    <div class="dropdown user-dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown link
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="#"><i class="fa fa-user"></i> My Profile</a>
+                          <a class="dropdown-item" href="/EventCalendar/api/bookmarks/"><i class="fa fa-bookmark"></i> My Bookmarks</a>
+                          <a class="dropdown-item" href="/EventCalendar/user/events/"><i class="fa fa-calendar-check-o"></i> My Events</a>
+                          <a class="dropdown-item" href="/EventCalendar/user/events/add/"><i class="fa fa-plus"></i> Add new Event</a>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+              </nav>        
+                       
+        </header>
+        <main class="main-item">
+            {% block main %}
+            {% endblock %}
+        </main>
+
+        <!--div class="bookmarks">Loading Bookmarks...</div-->     
+
+        <footer class="site-footer">
+            &copy; 2020  Peca Events
+        </footer>
+    </div>
+<!--
+    <script>const BASE = '{{ BASE }}'</script> -->
+    <script src="/EventCalendar/assets/js/bookmark.js"></script>
+    <script src="/EventCalendar/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/EventCalendar/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>    
+
+    </body>
+</html>

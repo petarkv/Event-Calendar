@@ -1,0 +1,40 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<h4>Events in {{ eventPlace }}</h4><br>
+
+<ul>
+  {% for event in eventscities %}
+    <li class="event row">
+      <div class="col-12 col-md-2">
+        <a href="/EventCalendar/event/{{ event.event_id }}" class="event-big-image">
+            <img src="/EventCalendar/assets/uploads/{{ event.event_id }}.jpg" 
+            alt="Big Image -{{event.event_id}}" class="width-100-percent">
+        </a>
+      </div>
+
+      <div class="col-12 col-md-10">            
+        <a href="/EventCalendar/event/{{ event.event_id }}" class="event-title">
+            {{ event.title|escape }} 
+        </a>
+
+        <div class="col-12 col-md-9 event-about">
+          <span class="event-description">{{ event.description|escape }}</span>
+        </div>
+
+        <div class="row event-info">                    
+            <span class="col-6 col-md-4">Starts At: {{ event.start_event|escape }}</span>
+            <span class="col-6 col-md-4">Ends At: {{ event.end_event|escape }}</span>
+            <span class="col-12 col-md-4">Ticket Price: {{ event.ticket_price|escape }} &euro;</span> 
+        </div>                 
+      </div>  
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block title %}
+Find Event
+{% endblock %}

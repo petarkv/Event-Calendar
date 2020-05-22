@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Peca Events - Calendar</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/EventCalendar/assets/css/main.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" /-->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        var calendar = $('#calendar').fullCalendar({
+            editable:true,
+             header:{
+                left:'prev,next today',
+                center:'title',
+                right:'month,agendaWeek,agendaDay'
+             },
+             events:'/EventCalendar/models/CalendarModel.php',
+             selectable:false,
+             selectHelper:true,
+             select: function(start, end, allDay)
+            {
+                var title = prompt("Enter Event Title");
+                if(title)
+                {
+                    var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");                    
+                }
+            },
+        });
+    });
+    </script>
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <div class="row">
+                <div class="col col-sm banner">
+                    <a href="/EventCalendar/home">
+                    <img src="/EventCalendar/assets/img/banner-1.jpg" alt="Banner 1">
+                    </a>
+                </div>
+    
+                <div class="col col-sm">
+                    <div class="social-icons text-right">                
+                        <a href="#"><img src="/EventCalendar/assets/img/social/facebook.png" alt="FB"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/instagram.png" alt="Gp"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/twitter.png" alt="Tw"></a>                
+                        <a href="#"><img src="/EventCalendar/assets/img/social/linkedin.png" alt="LI"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/youtube.png" alt="YT"></a>
+                    </div>
+
+                    <div class="search-box">
+                        <form method="POST" action="/EventCalendar/search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control" 
+                                     placeholder="Search" required pattern="[^\s]{2,}">
+                                    <button type="submit" class="btn btn-primary input-group-append">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>       
+            
+        </header>
+
+        <main>
+            <h1>Upcoming Events</h1><br>
+            <div class="container_calendar">
+            <div id="calendar"></div>
+            </div>     
+         
+        </main>
+        <footer class="site-footer">
+            &copy; 2020  Peca Events
+        </footer>        
+    </div>
+
+    
+
+    </body>
+</html>
+
+

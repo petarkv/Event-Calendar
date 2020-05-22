@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    margin: 0 auto;    
+    width: 1100px;
+}
+
+.site-header {
+    display: grid;
+    grid-template-areas: "banner social"
+                         "banner search"
+                         "menu   menu";
+}
+
+.banners {grid-area: banner; background-color: sandybrown; width: 650px; height: 150px;}
+.social-icons {grid-area: social; text-align: right;}
+.search-box {grid-area: search; text-align: right;}
+
+.social-icons img {
+    height: 25px;
+    width: 25px;
+    margin: 10px 10px;
+}
+
+.social-icons a i.fa {
+    display: inline-block;
+    color: crimson;
+    font-size: 25px;
+    margin: 5px;
+}
+
+.banners img {
+    width: 650px;
+    height: 150px; 
+}
+
+#main-menu {
+    grid-area: menu;
+    margin: 20px 0px;
+    background-color: darkgray;    
+}
+
+#main-menu > ul {
+    font-size: 18px;
+    font-style: oblique;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#main-menu > ul > li {
+    flex-grow: 1;
+    text-align: center;    
+}
+
+#main-menu > ul > li:hover {
+    background: rgba(200, 200, 200, 0.8);
+}
+
+#main-menu > ul > li > a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 0px;
+    color: #000;
+}
+
+#time {
+    height: 80px;
+    width: 200px;
+    margin: 10px 10px;
+    padding-top: 5px;
+    padding-left: 15px;
+    background-color: darkred;
+    color: #ccc;
+    font-size: 18px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+#time > a {
+    width: 100%;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+.category {
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 50%;
+    text-align: center;
+    padding: 50px 100px;
+    border: 1px solid #ccc;
+    background: rgba(200, 200, 200, 0.2);
+    text-decoration: none;
+    color: #000;
+}
+
+.category:hover {
+    border: 1px solid #000;
+    background: rgba(200, 200, 200, 0.6);
+}
+
+.site-footer {
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;    
+    color: #000;
+    margin-top: 40px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: darkgrey;
+    height: 50px;
+}
+
+.event {
+    display: grid;
+    grid-template-areas: "big-image big-image title title title description description"
+                         "big-image big-image date1 date1 date2 date2        ticket";
+    grid-template-columns: 120px 10px auto;
+    border-bottom: 1px solid #444;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.event > .event-title { grid-area: title; border: 1px dashed #444;}
+.event > .event-description { grid-area: description; border: 1px dashed #444;}
+.event > .event-date1 { grid-area: date1; border: 1px dashed #444; text-align: center;}
+.event > .event-date2 { grid-area: date2; border: 1px dashed #444; text-align: center;}
+.event > .ticket-price { grid-area: ticket; border: 1px dashed #444; text-align: right;}
+.event > .event-big-image { grid-area: big-image; border: 1px dashed #444; height: 160px; width: 120px;}
+/*.event > .image-1 { grid-area: small-image-1; border: 1px dashed #444; width: 80px;}
+.event > .image-2 { grid-area: small-image-2; border: 1px dashed #444; width: 80px;}*/
+
+.event .event-big-image img {
+    height: 160px; 
+    width: 120px;
+}
+
+.event > .event-title {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+/*.bookmark-card {
+    margin-top: 10px;
+}*/
+
+/*.bookmarks {
+    border: 1px solid #000000;
+    background: #fefefe;
+    position: fixed;
+    display: block;
+    right: 20px;
+    top: 30px;
+    }*/

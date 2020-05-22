@@ -1,0 +1,32 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<div>           
+    <div class="options">
+        <button type="button">
+            <a href="/EventCalendar/user/events/add">Add new Event</a>
+        </button>        
+    </div><br> 
+
+    <!--div class="categories">
+        <ul>
+            {% for event in events %}
+            <li>
+                <a href="/EventCalendar/user/events/edit/{{ event.event_id }}">
+                {{ event.title|escape }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div-->
+    {% for event in events %}
+    <div class="card event-card">        
+        <div class="events card-body">
+            <a href="/EventCalendar/user/events/edit/{{ event.event_id }}">
+                {{ event.title|escape }}
+        </div>        
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

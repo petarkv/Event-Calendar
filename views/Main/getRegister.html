@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Peca Events - {% block title %}Register{% endblock %}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/EventCalendar/assets/css/main.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/EventCalendar/assets/libs/font-awesome/css/font-awesome.min.css">
+         
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <div class="row">
+                <div class="col col-sm banner">
+                    <a href="/EventCalendar/user/register">
+                    <img src="/EventCalendar/assets/img/banner-1.jpg" alt="Banner 1">
+                    </a>
+                </div>
+    
+                <div class="col col-sm">
+                    <div class="social-icons text-right">                
+                        <a href="#"><img src="/EventCalendar/assets/img/social/facebook.png" alt="FB"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/instagram.png" alt="Gp"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/twitter.png" alt="Tw"></a>                
+                        <a href="#"><img src="/EventCalendar/assets/img/social/linkedin.png" alt="LI"></a>
+                        <a href="#"><img src="/EventCalendar/assets/img/social/youtube.png" alt="YT"></a>
+                    </div>                    
+                </div>
+
+            </div>
+                  
+                       
+        </header>
+        <main>
+
+            <div class="row register">
+                <form action="/EventCalendar/user/register" method="POST" 
+                    class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+                    <div class="card">
+                    <div class="card-header">
+                        User Registration
+                    </div>
+                
+                    <div class="card-body">
+                    <div class="form-group">
+                        <label for="input_email">E-mail:</label>
+                        <input type="email" id="input_email" name="reg_email" required class="form-control"
+                               placeholder="Enter Your e-mail in this Field.">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="input_forename">Forename:</label>
+                        <input type="text" id="input_forename" name="reg_forename" required class="form-control"
+                               placeholder="Enter Your Forename.">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="input_surname">Surname:</label>
+                        <input type="text" id="input_surname" name="reg_surname" required class="form-control"
+                               placeholder="Enter Your Surname.">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="input_username">Username:</label>
+                        <input type="text" id="input_username" name="reg_username" required class="form-control"
+                               placeholder="Enter Your Username.">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="input_password_1">Password:</label>
+                        <input type="password" id="input_password_1" name="reg_password_1" required class="form-control"
+                               placeholder="Enter Your Password.">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="input_password_2">Repeat your password:</label>
+                        <input type="password" id="input_password_2" name="reg_password_2" required class="form-control"
+                               placeholder="Enter Your Password Again.">
+                    </div>
+                    </div>
+                
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Register
+                        </button>
+                    </div>
+                </div>
+                </form>
+                </div>
+
+        </main>
+        <footer class="site-footer">
+            &copy; 2020  Peca Events
+        </footer>
+    </div>
+<!--
+    <script>const BASE = '{{ BASE }}'</script>
+    <script src="{{ BASE }}assets/js/bookmark.js"></script> -->
+    <script src="/EventCalendar/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/EventCalendar/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>    
+
+    </body>
+</html>

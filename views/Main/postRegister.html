@@ -1,0 +1,15 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div>
+    <p>{{message}}</p>
+    {% if app.user %}  
+    <p>Click <a href="/EventCalendar/registration">Here</a> to go on Login Page.</p>
+    {% else %}       
+    <p>Click <a href="/EventCalendar/user/register">Here</a> to go on Register Page.</p>
+    {% endif %}        
+</div><br>
+
+<h3>You can go on <a href="/EventCalendar/registration/">Sign in</a> Page</h3>
+{% endblock %}
+

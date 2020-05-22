@@ -1,0 +1,22 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div>
+    <button type="button">
+        <a href="#" onclick="addBookmark({{ event.event_id }});">Add to bookmark</a>
+    </button>
+</div>
+    
+    <h1>{{ event.title|escape }}</h1>
+    <p>{{ event.description }}</p>
+    <p>City: {{ eventPlace }}</p>
+    <p>Place: {{ event.place_name }}</p>
+    <p>Address: {{ event.place_address }}</p>     
+    <p>Starts At: Date: {{ event.start_event|date('d. m. Y.') }} Time: {{ event.start_time|date('H : i') }}</p>
+    <p>Ends At: Date: {{ event.end_event|date('d. m. Y.') }} Time: {{ event.end_time|date('H : i') }}</p>
+    <p>Site: <a href="http://{{ event.url }}">{{ event.url }}</a></p> 
+{% endblock %}
+
+{% block title %}
+{{ event.title|escape }}
+{% endblock %}
